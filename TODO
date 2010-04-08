@@ -1,0 +1,5 @@
+ - make board tiles clickable actors
+ - allow click - click move setting
+ - add labels for row/files
+ - add lavel for turn
+ - add history labels (eventually scroll widget)
