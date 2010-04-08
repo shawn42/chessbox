@@ -17,9 +17,7 @@ class Clickable < Behavior
   def setup
     click_opts = opts.merge DEFAULT_CALLBACKS
     click_callback = click_opts[:click]
-    $click_man ||= ClickAssistant.new @actor.input_manager  #@actor.director.assistant(:click)
-    @click_manager = $click_man
-    # TODO Director#assistant(:foo) => lazily instantiate ClickAssistant?
+    @click_manager = @actor.stage.stagehand(:click)
     @click_manager.register @actor, click_callback
   end
 
@@ -27,18 +25,16 @@ class Clickable < Behavior
     @click_manager.unregister @actor
   end
 end
-class ClickAssistant
-  # TODO add listener.respond_to? :when in input_manager
-  def when(*args)
-  end
-  def initialize(input)
-    @input_manager = input
+
+class ClickStagehand < Stagehand
+  def setup
+    @input_manager = stage.input_manager
 
     @currently_over = []
     @click_callbacks = {}
 
     # TODO track this in one place?
-    # SpatialAssistant maybe?
+    # SpatialStagehand maybe?
     @clickables = SpatialHash.new 50
 
     @input_manager.reg MouseUpEvent do |evt|
@@ -56,7 +52,7 @@ class ClickAssistant
     if clickable.respond_to? click_call
       @click_callbacks[clickable] = click_call
     else
-      puts "WARNING: ClickAssistant: #{clickable.class} does not respond to click_call: #{click_call}!"
+      puts "WARNING: ClickStagehand: #{clickable.class} does not respond to click_call: #{click_call}!"
     end
     @clickables.add clickable
   end

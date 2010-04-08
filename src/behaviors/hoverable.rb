@@ -19,9 +19,7 @@ class Hoverable < Behavior
     hover_opts = opts.merge DEFAULT_CALLBACKS
     enter_callback = hover_opts[:enter]
     exit_callback = hover_opts[:exit]
-    $hover_man ||= HoverAssistant.new @actor.input_manager  #@actor.director.assistant(:hover)
-    @hover_manager = $hover_man
-    # TODO Director#assistant(:foo) => lazily instantiate HoverAssistant?
+    @hover_manager = @actor.stage.stagehand(:hover)
     @hover_manager.register @actor, enter_callback, exit_callback
   end
 
@@ -29,12 +27,11 @@ class Hoverable < Behavior
     @hover_manager.unregister @actor
   end
 end
-class HoverAssistant
-  # TODO add listener.respond_to? :when in input_manager
-  def when(*args)
-  end
-  def initialize(input)
-    @input_manager = input
+
+class HoverStagehand < Stagehand
+
+  def setup
+    @input_manager = stage.input_manager
 
     @currently_over = []
     @enter_callbacks = {}
@@ -66,12 +63,12 @@ class HoverAssistant
     if hoverable.respond_to? enter_call
       @enter_callbacks[hoverable] = enter_call
     else
-      puts "WARNING: HoverAssistant: #{hoverable.class} does not respond to enter_call: #{enter_call}!"
+      puts "WARNING: HoverStagehand: #{hoverable.class} does not respond to enter_call: #{enter_call}!"
     end
     if hoverable.respond_to? exit_call
       @exit_callbacks[hoverable] = exit_call
     else
-      puts "WARNING: HoverAssistant: #{hoverable.class} does not respond to exit_call: #{exit_call}!"
+      puts "WARNING: HoverStagehand: #{hoverable.class} does not respond to exit_call: #{exit_call}!"
     end
     @hoverables.add hoverable
   end
