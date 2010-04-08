@@ -28,6 +28,7 @@ class Hoverable < Behavior
   end
 end
 
+# TODO pull this out
 class HoverStagehand < Stagehand
 
   def setup

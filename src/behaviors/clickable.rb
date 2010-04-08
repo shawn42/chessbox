@@ -26,6 +26,7 @@ class Clickable < Behavior
   end
 end
 
+# TODO pull this out
 class ClickStagehand < Stagehand
   def setup
     @input_manager = stage.input_manager
