@@ -15,7 +15,7 @@ end
 
 class ChessPiece < Actor
   #  race condition here on needing the size to register properly?
-#  has_behavior :hoverable
+#  has_behavior :hoverable, :clickable
 
 	attr_accessor :file, :row, :color, :has_moved, :board, :moves, :image, :width, :height
 
@@ -30,8 +30,10 @@ class ChessPiece < Actor
 
     @width, @height = *@image.size
     @x = ChessBoard::FILE_NAMES.index(@file) * 40 + 4 + @board.x
-    @y = ChessBoard::ROW_NAMES.index(@row) * 40 + 4 + @board.y
+    @y = (ChessBoard::ROW_NAMES.size-ChessBoard::ROW_NAMES.index(@row)-1) * 40 + 4 + @board.y
+
     is :hoverable
+    is :clickable
 	end
 
   def highlighted?
@@ -46,6 +48,10 @@ class ChessPiece < Actor
     else
       false
     end
+  end
+
+  def mouse_clicked(button, mouse_x,mouse_y)
+    puts "clicked #{self.class} #{self.file}#{self.row}"
   end
 
   def mouse_enter(mouse_x,mouse_y)

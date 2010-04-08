@@ -76,4 +76,10 @@ class HoverAssistant
     @hoverables.add hoverable
   end
 
+  def unregister(hoverable)
+    @hoverables.delete hoverable
+    @enter_callbacks.delete hoverable
+    @exit_callbacks.delete hoverable
+  end
+
 end
