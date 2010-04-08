@@ -1,0 +1,287 @@
+Black to move.
+ B
+       BLACK
+   _ _ _ _ _ _ _ _ 
+8 |r| |b|q|k| | |r|
+7 |p|p|p| | |p|p|p|
+6 | | |n| |p|n| | |
+5 | | |b| | | | | |
+4 | | | | | | | | |
+3 | | |N| |P|N| | |
+2 |P|P|P|P|Q|P|P|P|
+1 |R| |B| |K| | |R|
+   - - - - - - - - 
+   a|b|c|d|e|f|g|h
+       WHITE
+ p
+trying d8-d2
+self check
+check(white) returning false
+check(black) returning false
+update_available_moves(false)
+self check
+check(white) returning false
+self check
+check(white) returning false
+self check
+check(white) returning false
+self check
+check(white) returning false
+check(black) returning false
+self check
+check(white) returning false
+check(black) returning false
+self check
+check(white) returning false
+check(black) returning false
+self check
+check(white) returning false
+self check
+check(white) returning false
+self check
+check(white) returning false
+check(black) returning false
+self check
+check(white) returning false
+check(black) returning false
+self check
+check(white) returning false
+self check
+check(white) returning false
+self check
+check(white) returning false
+self check
+check(white) returning false
+self check
+check(white) returning false
+self check
+check(white) returning false
+self check
+check(white) returning false
+self check
+check(white) returning false
+check(black) returning false
+self check
+check(white) returning false
+check(black) returning false
+self check
+check(white) returning false
+check(black) returning false
+self check
+check(white) returning false
+check(black) returning false
+self check
+check(white) returning false
+check(black) returning false
+self check
+check(white) returning false
+check(black) returning false
+self check
+check(white) returning false
+check(black) returning false
+self check
+check(white) returning false
+check(black) returning false
+self check
+check(white) returning false
+check(black) returning false
+self check
+check(white) returning false
+check(black) returning false
+self check
+check(white) returning false
+check(black) returning false
+self check
+check(white) returning false
+check(black) returning false
+self check
+check(white) returning false
+check(black) returning false
+self check
+check(white) returning false
+check(black) returning false
+self check
+check(white) returning false
+check(black) returning false
+self check
+check(white) returning false
+check(black) returning false
+self check
+check(white) returning false
+check(black) returning false
+self check
+check(white) returning false
+check(black) returning false
+self check
+check(white) returning false
+check(black) returning false
+self check
+check(white) returning false
+check(black) returning false
+self check
+check(white) returning false
+check(black) returning false
+self check
+check(white) returning false
+check(black) returning false
+self check
+check(white) returning false
+check(black) returning false
+self check
+check(white) returning false
+check(black) returning false
+self check
+check(white) returning false
+check(black) returning false
+self check
+check(white) returning false
+check(black) returning false
+self check
+KING GO AWAY[e1]
+white
+Queen
+/Users/sanderson/_code/chess_on_rails/config/../app/models/chess_piece.rb:17:in `move!'
+/Users/sanderson/_code/chess_on_rails/config/../app/models/chess_board.rb:210:in `do_move!'
+/Users/sanderson/_code/chess_on_rails/config/../app/models/chess_piece.rb:39:in `move_puts_self_in_check?'
+/Users/sanderson/_code/chess_on_rails/config/../app/models/queen.rb:8:in `move_valid?'
+/Users/sanderson/_code/chess_on_rails/config/../app/models/chess_board.rb:459:in `update_available_moves'
+/Users/sanderson/_code/chess_on_rails/config/../app/models/chess_board.rb:458:in `each'
+/Users/sanderson/_code/chess_on_rails/config/../app/models/chess_board.rb:458:in `update_available_moves'
+/Users/sanderson/_code/chess_on_rails/config/../app/models/chess_board.rb:457:in `each'
+/Users/sanderson/_code/chess_on_rails/config/../app/models/chess_board.rb:457:in `update_available_moves'
+/Users/sanderson/_code/chess_on_rails/config/../app/models/chess_board.rb:450:in `each'
+/Users/sanderson/_code/chess_on_rails/config/../app/models/chess_board.rb:450:in `update_available_moves'
+/Users/sanderson/_code/chess_on_rails/config/../app/models/chess_board.rb:449:in `each'
+/Users/sanderson/_code/chess_on_rails/config/../app/models/chess_board.rb:449:in `update_available_moves'
+/Users/sanderson/_code/chess_on_rails/config/../app/models/chess_board.rb:222:in `do_move!'
+/Users/sanderson/_code/chess_on_rails/config/../app/models/chess_board.rb:193:in `move!'
+chess_board_test.rb:93:in `test_king_cap_pawn_bug'
+/usr/local/lib/ruby/1.8/test/unit/testcase.rb:78:in `__send__'
+/usr/local/lib/ruby/1.8/test/unit/testcase.rb:78:in `run'
+/usr/local/lib/ruby/1.8/test/unit/testsuite.rb:34:in `run'
+/usr/local/lib/ruby/1.8/test/unit/testsuite.rb:33:in `each'
+/usr/local/lib/ruby/1.8/test/unit/testsuite.rb:33:in `run'
+/usr/local/lib/ruby/1.8/test/unit/testsuite.rb:34:in `run'
+/usr/local/lib/ruby/1.8/test/unit/testsuite.rb:33:in `each'
+/usr/local/lib/ruby/1.8/test/unit/testsuite.rb:33:in `run'
+/usr/local/lib/ruby/1.8/test/unit/ui/testrunnermediator.rb:46:in `run_suite'
+/usr/local/lib/ruby/1.8/test/unit/ui/console/testrunner.rb:67:in `start_mediator'
+/usr/local/lib/ruby/1.8/test/unit/ui/console/testrunner.rb:41:in `start'
+/usr/local/lib/ruby/1.8/test/unit/ui/testrunnerutilities.rb:29:in `run'
+/usr/local/lib/ruby/1.8/test/unit/autorunner.rb:216:in `run'
+/usr/local/lib/ruby/1.8/test/unit/autorunner.rb:12:in `run'
+/usr/local/lib/ruby/1.8/test/unit.rb:278
+chess_board_test.rb:73
+self check
+self check
+self check
+self check
+self check
+self check
+self check
+self check
+self check
+self check
+self check
+self check
+check(black) returning false
+self check
+KING COME BACK
+black
+King
+self check
+KING COME BACK
+black
+King
+self check
+KING COME BACK
+black
+King
+self check
+KING COME BACK
+black
+King
+self check
+KING COME BACK
+black
+King
+self check
+KING COME BACK
+black
+King
+self check
+KING COME BACK
+black
+King
+self check
+self check
+self check
+self check
+self check
+self check
+self check
+self check
+self check
+self check
+self check
+self check
+self check
+self check
+self check
+self check
+self check
+KING COME BACK
+black
+King
+self check
+KING COME BACK
+black
+King
+self check
+KING COME BACK
+black
+King
+self check
+KING COME BACK
+black
+King
+self check
+self check
+self check
+self check
+self check
+self check
+self check
+self check
+self check
+self check
+self check
+self check
+self check
+self check
+self check
+Could not find white King!
+Black to move.
+ B P K Q P R P P
+       BLACK
+   _ _ _ _ _ _ _ _ 
+8 |r| |b| | | |k|r|
+7 |p|p|p| | | | |p|
+6 | | |n| | | | |q|
+5 | | |b| |p|p|p| |
+4 | | | | | | | | |
+3 | | |N| | |N| | |
+2 |P|P|P| | | |P| |
+1 |R| |B| | | | |n|
+   - - - - - - - - 
+   a|b|c|d|e|f|g|h
+       WHITE
+ p
+F
+Finished in 1.011453 seconds.
+
+  1) Failure:
+test_king_cap_pawn_bug(ChessBoardTest) [chess_board_test.rb:142]:
+<false> is not true.
+
+1 tests, 1 assertions, 1 failures, 0 errors
