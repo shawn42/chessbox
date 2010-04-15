@@ -14,8 +14,7 @@ class ChessPieceView < GraphicalActorView
 end
 
 class ChessPiece < Actor
-  #  race condition here on needing the size to register properly?
-#  has_behavior :hoverable, :clickable
+  has_behavior :hoverable, :clickable, :draggable
 
 	attr_accessor :file, :row, :color, :has_moved, :board, :moves, :image, :width, :height
 
@@ -32,9 +31,21 @@ class ChessPiece < Actor
     @x = ChessBoard::FILE_NAMES.index(@file) * 40 + 4 + @board.x
     @y = (ChessBoard::ROW_NAMES.size-ChessBoard::ROW_NAMES.index(@row)-1) * 40 + 4 + @board.y
 
-    is :hoverable
-    is :clickable
 	end
+
+  # TODO need to convert these coords w/ the viewport ..
+  def dragging(button, x, y)
+#    puts "DRAGGING!"
+    @x = x
+    @y = y
+  end
+  # TODO need to convert these coords w/ the viewport ..
+  def start_drag(button, x, y)
+#    puts "START DRAGGING!"
+  end
+  def stop_drag(button, x, y)
+#    puts "STOP DRAGGING!"
+  end
 
   def highlighted?
     @highlighted
