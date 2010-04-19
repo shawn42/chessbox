@@ -43,6 +43,8 @@ class StaryNight < Actor
       s[1] += @speed * time
     end
 
+    @piled ||= []
+
     @stars.delete_if{|s|s[1] > @viewport.height}
     (@count-@stars.size).times do
       @stars << generate_star_in(@viewport.width, 0)
